@@ -1,0 +1,280 @@
+/* ============================================================
+   Sunset Gradient × Neon Aesthetics
+   日落渐变 × 霓虹美学 —— Vinci's Blog 自定义皮肤
+   ============================================================ */
+
+/* 复古艺术衬线字体（自托管） */
+@font-face {
+  font-family: 'Shrikhand';
+  src: url('/fonts/Shrikhand-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ns-orange: #ff9a3d;
+  --ns-pink: #ff2e88;
+  --ns-purple: #b537f2;
+  --ns-cyan: #2de2e6;
+  --ns-deep: #130a24;
+  --ns-card: rgba(64, 36, 98, 0.85);
+  --ns-sunset: linear-gradient(120deg, var(--ns-orange) 0%, var(--ns-pink) 45%, var(--ns-purple) 100%);
+}
+
+/* ---------- 全局：深紫夜空背景（提亮版） ---------- */
+body {
+  background:
+    radial-gradient(1100px 520px at 85% -5%, rgba(255, 46, 136, 0.3), transparent 62%),
+    radial-gradient(900px 480px at 8% 108%, rgba(181, 55, 242, 0.28), transparent 62%),
+    radial-gradient(1200px 500px at 50% 118%, rgba(255, 138, 61, 0.28), transparent 68%),
+    linear-gradient(180deg, #3a1d6e 0%, #2c1a52 55%, #3a1f33 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* ---------- 首页顶部：日落地平线（提亮版） ---------- */
+#page-header.full_page {
+  background:
+    radial-gradient(75% 62% at 50% 116%, rgba(255, 168, 80, 0.95), transparent 78%),
+    radial-gradient(95% 70% at 50% 130%, rgba(255, 110, 60, 0.65), transparent 80%),
+    linear-gradient(180deg, #33165c 0%, #5f2483 36%, #b13d6b 60%, #ef6a38 82%, #ffa64d 100%) !important;
+}
+
+/* 非首页（文章页等）顶部 */
+#page-header:not(.full_page) {
+  background:
+    radial-gradient(70% 90% at 50% 120%, rgba(255, 150, 70, 0.5), transparent 72%),
+    linear-gradient(180deg, #241040 0%, #55206b 68%, #a4483f 100%) !important;
+}
+
+/* ---------- 导航栏：毛玻璃 + 霓虹描边 ---------- */
+#page-header #nav {
+  background: rgba(48, 24, 76, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255, 46, 136, 0.35), 0 6px 24px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+}
+
+#page-header #nav a {
+  color: #ffd9ec !important;
+  text-shadow: 0 0 6px rgba(255, 46, 136, 0.01);
+  transition: all 0.25s ease;
+}
+
+#page-header #nav a:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 46, 136, 0.9);
+}
+
+/* ---------- 站点标题：日落渐变字 + 光晕 ---------- */
+#site-title,
+#page-header #nav .site-name {
+  font-family: 'Shrikhand', 'Georgia', serif !important;
+}
+
+/* 标题字号放大 */
+#page-header #site-title {
+  font-size: 2.3em !important;
+}
+
+@media screen and (min-width: 768px) {
+  #page-header #site-title {
+    font-size: 3.6em !important;
+  }
+}
+
+#site-title {
+  background: var(--ns-sunset) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  filter: drop-shadow(0 0 16px rgba(255, 46, 136, 0.55));
+  letter-spacing: 2px;
+}
+
+#site-subtitle,
+#site-name {
+  color: #ffd7ea !important;
+  text-shadow: 0 0 12px rgba(255, 46, 136, 0.6);
+}
+
+/* 首页下滑提示 */
+#scroll-down .scroll-down-effects {
+  color: #ffb56b !important;
+  text-shadow: 0 0 10px rgba(255, 154, 61, 0.8);
+}
+
+/* ---------- 卡片：半透明 + 霓虹边框 ---------- */
+#recent-posts .recent-post-item,
+#aside-content .card-widget {
+  background: var(--ns-card) !important;
+  border: 1px solid rgba(255, 46, 136, 0.16);
+  border-radius: 14px !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#recent-posts .recent-post-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 46, 136, 0.65);
+  box-shadow:
+    0 0 22px rgba(255, 46, 136, 0.35),
+    0 0 44px rgba(181, 55, 242, 0.22),
+    0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+#aside-content .card-widget:hover {
+  border-color: rgba(45, 226, 230, 0.55);
+  box-shadow: 0 0 18px rgba(45, 226, 230, 0.28);
+}
+
+/* 头像霓虹环 */
+#aside-content .avatar-img img {
+  border: 2px solid rgba(255, 46, 136, 0.65) !important;
+  box-shadow: 0 0 18px rgba(255, 46, 136, 0.55);
+}
+
+/* ---------- 文章标题与链接 ---------- */
+#recent-posts .article-title {
+  color: #fff2f8 !important;
+  transition: all 0.25s ease;
+}
+
+#recent-posts .recent-post-item:hover .article-title {
+  background: linear-gradient(90deg, #ffb56b, #ff2e88) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  filter: drop-shadow(0 0 10px rgba(255, 46, 136, 0.45));
+}
+
+/* 文章元信息（日期/分类）：霓虹青 */
+.article-meta-wrap,
+#post-meta {
+  color: rgba(45, 226, 230, 0.9) !important;
+}
+
+.article-meta-wrap a,
+#post-meta a {
+  color: var(--ns-cyan) !important;
+}
+
+.article-meta-wrap a:hover,
+#post-meta a:hover {
+  color: #7df6f9 !important;
+  text-shadow: 0 0 8px rgba(45, 226, 230, 0.8);
+}
+
+/* 全局链接悬停霓虹效果 */
+#recent-posts a:hover,
+#aside-content a:hover {
+  color: var(--ns-pink) !important;
+  text-shadow: 0 0 8px rgba(255, 46, 136, 0.55);
+}
+
+/* ---------- 文章正文 ---------- */
+#article-container {
+  color: #e8dcef !important;
+}
+
+#article-container a {
+  color: var(--ns-cyan) !important;
+  border-bottom-color: rgba(45, 226, 230, 0.4) !important;
+}
+
+#article-container a:hover {
+  color: var(--ns-pink) !important;
+  text-shadow: 0 0 10px rgba(255, 46, 136, 0.65);
+}
+
+#article-container h1,
+#article-container h2,
+#article-container h3,
+#article-container h4 {
+  color: #ffd9ec !important;
+}
+
+#article-container h2 {
+  border-bottom: none !important;
+  background: linear-gradient(90deg, rgba(255, 46, 136, 0.75), rgba(181, 55, 242, 0.75), transparent) bottom left / 40% 2px no-repeat;
+  padding-bottom: 8px;
+}
+
+#article-container blockquote {
+  border-left: 3px solid var(--ns-pink) !important;
+  background: rgba(255, 46, 136, 0.08) !important;
+  box-shadow: inset 0 0 24px rgba(255, 46, 136, 0.06);
+}
+
+#article-container hr {
+  border: none !important;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ns-orange), var(--ns-pink), var(--ns-purple), transparent);
+  opacity: 0.7;
+}
+
+/* 标签云 */
+#aside-content .card-tag-cloud a,
+.post-meta .post-meta__tags a {
+  transition: all 0.25s ease;
+}
+
+#aside-content .card-tag-cloud a:hover {
+  color: var(--ns-pink) !important;
+  text-shadow: 0 0 10px rgba(255, 46, 136, 0.7);
+}
+
+/* ---------- 翻页按钮 ---------- */
+#pagination a {
+  background: rgba(28, 14, 48, 0.85) !important;
+  border: 1px solid rgba(255, 46, 136, 0.25);
+  transition: all 0.3s ease;
+}
+
+#pagination a:hover {
+  background: var(--ns-sunset) !important;
+  border-color: transparent;
+  box-shadow: 0 0 18px rgba(255, 46, 136, 0.55);
+}
+
+/* ---------- 页脚 ---------- */
+#footer {
+  background: rgba(32, 15, 46, 0.9) !important;
+  border-top: 1px solid rgba(255, 46, 136, 0.22);
+  color: #cbb3dd !important;
+}
+
+#footer a {
+  color: #ffb56b !important;
+}
+
+#footer a:hover {
+  color: var(--ns-pink) !important;
+  text-shadow: 0 0 8px rgba(255, 46, 136, 0.7);
+}
+
+/* ---------- 细节：滚动条 / 选中文字 ---------- */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--ns-orange), var(--ns-pink), var(--ns-purple)) !important;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f1035;
+}
+
+::selection {
+  background: rgba(255, 46, 136, 0.45);
+  color: #ffffff;
+}
+
+/* ---------- 右下角模式切换按钮 ---------- */
+#rightside > div > button,
+#rightside > div > a {
+  background: rgba(28, 14, 48, 0.85) !important;
+  border: 1px solid rgba(255, 46, 136, 0.3);
+  box-shadow: 0 0 12px rgba(255, 46, 136, 0.25);
+}
