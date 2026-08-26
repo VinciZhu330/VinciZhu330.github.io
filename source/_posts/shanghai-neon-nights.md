@@ -14,19 +14,23 @@ First pin on the travel map! This demo post shows how a travel story is wired to
 
 Replace this post with your own journey, or delete it once your first real travel log is published.
 
-## How media works in travel posts
+## How to insert local images
 
-Put images and videos under `source/media/shanghai-neon-nights/`, then reference them by absolute path:
+`hexo new post` creates a folder next to this file with the same name (`source/_posts/shanghai-neon-nights/`). Drop local images straight into it, then reference them by file name only:
+
+```markdown
+![The Bund at night](bund.jpg)
+```
+
+Videos live in the same folder and embed with a relative path:
 
 ```html
-<img src="/media/shanghai-neon-nights/bund.jpg" alt="The Bund at night" loading="lazy">
-
 <video controls preload="metadata" playsinline>
-  <source src="/media/shanghai-neon-nights/bund-walk.mp4" type="video/mp4">
+  <source src="bund-walk.mp4" type="video/mp4">
 </video>
 ```
 
-Once the real files are in place, move the tags out of this code fence and they will render. Tips:
+Tips:
 
 - Keep videos as H.264 `.mp4`, ideally under ~30 MB (GitHub's hard limit is 100 MB per file).
-- Use `loading="lazy"` for images below the fold.
+- Images render at half column width by default (site style); that's expected.

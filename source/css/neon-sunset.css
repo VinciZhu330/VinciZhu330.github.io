@@ -216,6 +216,12 @@ body {
   opacity: 0.7;
 }
 
+/* 正文图片：半栏宽，保持原始宽高比 */
+#article-container img {
+  width: 50%;
+  height: auto;
+}
+
 /* 标签云 */
 #aside-content .card-tag-cloud a,
 .post-meta .post-meta__tags a {
