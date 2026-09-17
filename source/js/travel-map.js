@@ -16,7 +16,7 @@
   var LEAFLET_VERSION = '1.9.4';
   var LEAFLET_CSS = 'https://cdn.jsdelivr.net/npm/leaflet@' + LEAFLET_VERSION + '/dist/leaflet.css';
   var LEAFLET_JS = 'https://cdn.jsdelivr.net/npm/leaflet@' + LEAFLET_VERSION + '/dist/leaflet.js';
-  var TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+  var TILE_URL = 'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png?key=cb1_3o8r_1_03ffacac7a63f28da8c62132';
   var TILE_ATTR =
     '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors ' +
     '&copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>';
